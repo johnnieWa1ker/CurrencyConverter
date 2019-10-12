@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		79158F1C2350876E009C133B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79158F1B2350876E009C133B /* AppDelegate.swift */; };
 		79158F1E2350876E009C133B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79158F1D2350876E009C133B /* SceneDelegate.swift */; };
-		79158F202350876E009C133B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79158F1F2350876E009C133B /* ViewController.swift */; };
 		79158F232350876E009C133B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79158F212350876E009C133B /* Main.storyboard */; };
 		79158F252350876F009C133B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79158F242350876F009C133B /* Assets.xcassets */; };
 		79158F282350876F009C133B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79158F262350876F009C133B /* LaunchScreen.storyboard */; };
+		79158F30235087EB009C133B /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 79158F2F235087EB009C133B /* data.xml */; };
+		79158F3223508808009C133B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79158F3123508808009C133B /* Model.swift */; };
+		796635C02351C28100AF8688 /* ConverterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796635BF2351C28100AF8688 /* ConverterController.swift */; };
+		796635C22351C40500AF8688 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796635C12351C40500AF8688 /* CoursesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		79158F182350876E009C133B /* Currency Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Currency Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79158F1B2350876E009C133B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79158F1D2350876E009C133B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		79158F1F2350876E009C133B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79158F222350876E009C133B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79158F242350876F009C133B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79158F272350876F009C133B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79158F292350876F009C133B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79158F2F235087EB009C133B /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
+		79158F3123508808009C133B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		796635BF2351C28100AF8688 /* ConverterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterController.swift; sourceTree = "<group>"; };
+		796635C12351C40500AF8688 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,15 @@
 		79158F1A2350876E009C133B /* Currency Converter */ = {
 			isa = PBXGroup;
 			children = (
+				79158F212350876E009C133B /* Main.storyboard */,
+				79158F3123508808009C133B /* Model.swift */,
+				796635C12351C40500AF8688 /* CoursesController.swift */,
+				796635BF2351C28100AF8688 /* ConverterController.swift */,
 				79158F1B2350876E009C133B /* AppDelegate.swift */,
 				79158F1D2350876E009C133B /* SceneDelegate.swift */,
-				79158F1F2350876E009C133B /* ViewController.swift */,
-				79158F212350876E009C133B /* Main.storyboard */,
 				79158F242350876F009C133B /* Assets.xcassets */,
 				79158F262350876F009C133B /* LaunchScreen.storyboard */,
+				79158F2F235087EB009C133B /* data.xml */,
 				79158F292350876F009C133B /* Info.plist */,
 			);
 			path = "Currency Converter";
@@ -126,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79158F282350876F009C133B /* LaunchScreen.storyboard in Resources */,
+				79158F30235087EB009C133B /* data.xml in Resources */,
 				79158F252350876F009C133B /* Assets.xcassets in Resources */,
 				79158F232350876E009C133B /* Main.storyboard in Resources */,
 			);
@@ -138,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79158F202350876E009C133B /* ViewController.swift in Sources */,
 				79158F1C2350876E009C133B /* AppDelegate.swift in Sources */,
 				79158F1E2350876E009C133B /* SceneDelegate.swift in Sources */,
+				79158F3223508808009C133B /* Model.swift in Sources */,
+				796635C02351C28100AF8688 /* ConverterController.swift in Sources */,
+				796635C22351C40500AF8688 /* CoursesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
