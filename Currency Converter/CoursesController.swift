@@ -10,14 +10,18 @@ import UIKit
 
 class CoursesController: UITableViewController {
 
+    @IBOutlet weak var changeDataButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "dataRefreshed"), object: nil, queue: nil) { (Notification) in
+            
+            self.tableView.reloadData()
+        
+            let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
+            self.navigationItem.title = titleTextOfCoursesScreen
+        }
     }
 
     // MARK: - Table view data source
@@ -43,6 +47,9 @@ class CoursesController: UITableViewController {
 
         return cell
     }
+    
+    @IBOutlet weak var titleOfCourses: UINavigationItem!
+    
     
 
     /*
