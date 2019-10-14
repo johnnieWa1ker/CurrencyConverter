@@ -110,7 +110,7 @@ class Model: NSObject, XMLParserDelegate {
         parser?.delegate = self
         parser?.parse()
         
-        print("Update data ")
+        print("Update data")
         
         // Send notification in application
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dataRefreshed"), object: self)
