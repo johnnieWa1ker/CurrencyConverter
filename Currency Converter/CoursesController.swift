@@ -19,8 +19,12 @@ class CoursesController: UITableViewController {
             
             self.tableView.reloadData()
         
-            let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
-            self.navigationItem.title = titleTextOfCoursesScreen
+            DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+                let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
+                self!.navigationItem.title = titleTextOfCoursesScreen
+                
+            }
         }
     }
 

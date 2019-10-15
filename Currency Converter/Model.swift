@@ -75,6 +75,7 @@ class Model: NSObject, XMLParserDelegate {
                 // Save file from URL
                 do {
                     try data?.write(to: urlForSave)
+                    print(path)
                     print("File is load ")
                     // Script processing for which a new file should be loaded first
                     self.parseXML()
