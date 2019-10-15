@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: Why is it here?
         Model.shared.parseXML()
-        Model.shared.loadXMLFile(date: nil)
         
         return true
     }

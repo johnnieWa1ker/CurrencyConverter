@@ -25,18 +25,18 @@
             </objects>
             <point key="canvasLocation" x="-345" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Controller-->
         <scene sceneID="P3o-Qp-Ec3">
             <objects>
-                <viewController id="7m1-E2-m2c" sceneMemberID="viewController">
+                <viewController id="7m1-E2-m2c" customClass="SettingsController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lby-Dv-cAk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-pM-lzx">
-                                <rect key="frame" x="20" y="136" width="374" height="282"/>
+                                <rect key="frame" x="20" y="506" width="374" height="282"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ao1-wy-KXc">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ao1-wy-KXc">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="216"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jm-oF-NYM">
@@ -54,13 +54,16 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pushDoneButton:" destination="7m1-E2-m2c" eventType="touchUpInside" id="CVl-sn-4sM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fEx-pM-lzx" firstAttribute="top" secondItem="bQz-J0-6pP" secondAttribute="top" constant="80" id="2E9-Me-Cqg"/>
+                            <constraint firstItem="bQz-J0-6pP" firstAttribute="bottom" secondItem="fEx-pM-lzx" secondAttribute="bottom" constant="20" id="M1E-v7-Inf"/>
                             <constraint firstItem="fEx-pM-lzx" firstAttribute="leading" secondItem="bQz-J0-6pP" secondAttribute="leading" constant="20" id="eDC-XV-bTZ"/>
                             <constraint firstItem="bQz-J0-6pP" firstAttribute="trailing" secondItem="fEx-pM-lzx" secondAttribute="trailing" constant="20" id="sXd-Pu-Vlq"/>
                         </constraints>
@@ -70,7 +73,9 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YJh-kb-Y8K"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="sq1-vp-qGe"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="ao1-wy-KXc" id="qCV-iI-W71"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfl-jt-J5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,15 +121,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Курсы" id="9Wx-vn-IYJ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="calendar" catalog="system" id="OG7-Dp-s0C">
-                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <variation key="heightClass=regular-widthClass=compact">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="cth-t7-Eou">
                                 <color key="tintColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </variation>
-                            <connections>
-                                <segue destination="7m1-E2-m2c" kind="modal" id="Drt-nH-XKX"/>
-                            </connections>
-                        </barButtonItem>
+                                <connections>
+                                    <action selector="refreshDataButton:" destination="Htw-FT-wMW" id="3ct-IA-Lnf"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="calendar" catalog="system" id="OG7-Dp-s0C">
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <color key="tintColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="7m1-E2-m2c" kind="presentation" id="Drt-nH-XKX"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="changeDataButton" destination="OG7-Dp-s0C" id="xy1-2E-aaX"/>

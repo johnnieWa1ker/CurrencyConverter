@@ -11,21 +11,40 @@ import UIKit
 class CoursesController: UITableViewController {
 
     @IBOutlet weak var changeDataButton: UIBarButtonItem!
+    @IBAction func refreshDataButton(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "dataRefreshed"), object: nil, queue: nil) { (Notification) in
-            
-            self.tableView.reloadData()
         
-            DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-                let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
-                self!.navigationItem.title = titleTextOfCoursesScreen
-                
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "startLoadingXML"), object : nil, queue: nil) { (Notification) in
+            
+            // MARK: Not work (((
+            DispatchQueue.main.async {
+                let activityIndicator = UIActivityIndicatorView()
+                activityIndicator.startAnimating()
+                self.navigationItem.rightBarButtonItem?.customView = activityIndicator
+                print("activityIndicator is work!")
             }
         }
+            
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "dataRefreshed"), object: nil, queue: nil) { (Notification) in
+            
+            DispatchQueue.main.async {
+                
+                self.tableView.reloadData()
+                
+                let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
+                self.navigationItem.title = titleTextOfCoursesScreen
+                
+                let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(self.refreshDataButton(_:)))
+                self.navigationItem.rightBarButtonItem = refreshButton
+            }
+        }
+        
+        Model.shared.loadXMLFile(date: nil)
+        
     }
 
     // MARK: - Table view data source

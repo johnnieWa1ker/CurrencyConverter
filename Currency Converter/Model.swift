@@ -32,7 +32,10 @@ class Model: NSObject, XMLParserDelegate {
     // MARK:  What does this mean? For what?
     static let shared = Model()
     
+    // A variable that stores an array of data with currencies and values
     var currencies: [Currency] = []
+    
+    // A variable that stores date information that is specified in the course data file
     var dateFromFile: String = ""
     
     // Path to the data file if can't load file from cbr.ru
@@ -90,6 +93,9 @@ class Model: NSObject, XMLParserDelegate {
             }
         }
         
+        // Notification about loading data
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startLoadingXML"), object: self)
+        
         // Request URL
         task.resume()
     }
@@ -101,7 +107,7 @@ class Model: NSObject, XMLParserDelegate {
     func parseXML () {
         
         // Reset old data before loading new ones
-        currencies = [ ]
+        currencies = []
         
         let parser = XMLParser(contentsOf: urlForXML)
         
@@ -169,5 +175,4 @@ class Model: NSObject, XMLParserDelegate {
             currencies.append(newCurrency!)
         }
     }
-    
 }
