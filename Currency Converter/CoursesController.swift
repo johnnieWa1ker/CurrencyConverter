@@ -17,38 +17,54 @@ class CoursesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: Received a message about the start of data loading
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "startLoadingXML"), object : nil, queue: nil) { (Notification) in
             
-            // MARK: Not work (((
             DispatchQueue.main.async {
-                let activityIndicator = UIActivityIndicatorView()
+                // MARK: Not work (((
+                // Run loader when updating data
+                let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+                activityIndicator.color = UIColor.red
                 activityIndicator.startAnimating()
                 self.navigationItem.rightBarButtonItem?.customView = activityIndicator
-                print("activityIndicator is work!")
             }
         }
-            
         
+        // MARK: Received a data load message
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "dataRefreshed"), object: nil, queue: nil) { (Notification) in
             
             DispatchQueue.main.async {
                 
                 self.tableView.reloadData()
                 
+                // Set text to title
                 let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
                 self.navigationItem.title = titleTextOfCoursesScreen
+                
+                // Stop loader after updating data
+                let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(self.refreshDataButton(_:)))
+                self.navigationItem.rightBarButtonItem = refreshButton
+            }
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("SomeExternalError"), object: nil, queue: nil) { (Notification) in
+            
+            let errorName = Notification.userInfo?["ErrorName"]
+            print(errorName!)
+            DispatchQueue.main.async {
                 
                 let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(self.refreshDataButton(_:)))
                 self.navigationItem.rightBarButtonItem = refreshButton
             }
         }
         
+        navigationItem.title = Model.shared.dateFromFile
+        
         Model.shared.loadXMLFile(date: nil)
         
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

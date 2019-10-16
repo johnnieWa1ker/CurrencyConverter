@@ -25,11 +25,24 @@ class Currency {
     var name: String?
     var value: String?
     var valueDouble: Double?
+    
+    // The value "Ruble" is missing in the file from cbr.ru, so we create it manually
+    class func rouble() -> Currency {
+        let r = Currency()
+        r.charCode = "RUB"
+        r.name = "Российский рубль"
+        r.nominal = "1"
+        r.nominalDouble = 1
+        r.value = "1"
+        r.valueDouble = 1
+        
+        return r
+    }
 }
 
 class Model: NSObject, XMLParserDelegate {
     
-    // MARK:  What does this mean? For what?
+    // What does this mean? For what?
     static let shared = Model()
     
     // A variable that stores an array of data with currencies and values
@@ -37,6 +50,20 @@ class Model: NSObject, XMLParserDelegate {
     
     // A variable that stores date information that is specified in the course data file
     var dateFromFile: String = ""
+    
+    // MARK: Conversion Functionality
+    var fromCurrency: Currency = Currency.rouble()
+    var toCurrency: Currency = Currency.rouble()
+    
+    func  convert (amount: Double?) -> String {
+        if amount == nil {
+            return ""
+        }
+        
+        let d = ((fromCurrency.nominalDouble! * fromCurrency.valueDouble!) / (toCurrency.nominalDouble! * toCurrency.valueDouble!)) * amount!
+        
+        return String(d)
+    }
     
     // Path to the data file if can't load file from cbr.ru
     var pathForXML: String {
@@ -70,6 +97,9 @@ class Model: NSObject, XMLParserDelegate {
         
         // Generate URL request
         let task = URLSession.shared.dataTask(with: url!) { (data, responce, error) in
+            
+            var externalError: String?
+            
             if error == nil {
                 // Specify the path to save the file
                 let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/data.xml"
@@ -90,7 +120,13 @@ class Model: NSObject, XMLParserDelegate {
                 
             } else {
                 print("Error when load XMLfile: \(error!.localizedDescription)")
+                externalError = error?.localizedDescription
             }
+            
+            if let externalError = externalError {
+                NotificationCenter.default.post(name: NSNotification.Name("SomeExternalError"), object: self, userInfo: ["ErrorName":externalError])
+            }
+            
         }
         
         // Notification about loading data
@@ -107,7 +143,8 @@ class Model: NSObject, XMLParserDelegate {
     func parseXML () {
         
         // Reset old data before loading new ones
-        currencies = []
+        // The currency "Ruble" is added to the data from the file
+        currencies = [Currency.rouble()]
         
         let parser = XMLParser(contentsOf: urlForXML)
         

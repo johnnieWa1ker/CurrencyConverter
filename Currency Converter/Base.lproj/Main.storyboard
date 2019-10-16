@@ -125,7 +125,7 @@
                             <barButtonItem systemItem="refresh" id="cth-t7-Eou">
                                 <color key="tintColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="refreshDataButton:" destination="Htw-FT-wMW" id="3ct-IA-Lnf"/>
+                                    <action selector="refreshDataButton:" destination="Htw-FT-wMW" id="gN0-m0-26a"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="calendar" catalog="system" id="OG7-Dp-s0C">
