@@ -21,6 +21,9 @@ class SettingsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.5)
+        
+//        self.view.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.height * 0.5, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.5)
         // Do any additional setup after loading the view.
     }
     

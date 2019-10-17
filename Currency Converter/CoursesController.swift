@@ -12,6 +12,7 @@ class CoursesController: UITableViewController {
 
     @IBOutlet weak var changeDataButton: UIBarButtonItem!
     @IBAction func refreshDataButton(_ sender: Any) {
+        Model.shared.loadXMLFile(date: nil)
     }
     
     override func viewDidLoad() {
@@ -20,31 +21,48 @@ class CoursesController: UITableViewController {
         // MARK: Received a message about the start of data loading
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "startLoadingXML"), object : nil, queue: nil) { (Notification) in
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                
                 // MARK: Not work (((
                 // Run loader when updating data
                 let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
                 activityIndicator.color = UIColor.red
                 activityIndicator.startAnimating()
-                self.navigationItem.rightBarButtonItem?.customView = activityIndicator
+                strongSelf.navigationItem.rightBarButtonItem?.customView = activityIndicator
             }
         }
         
         // MARK: Received a data load message
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "dataRefreshed"), object: nil, queue: nil) { (Notification) in
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                guard let strongSelf = self else { return }
                 
-                self.tableView.reloadData()
+                strongSelf.tableView.reloadData()
                 
                 // Set text to title
                 let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
-                self.navigationItem.title = titleTextOfCoursesScreen
+                strongSelf.navigationItem.title = titleTextOfCoursesScreen
                 
                 // Stop loader after updating data
-                let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(self.refreshDataButton(_:)))
-                self.navigationItem.rightBarButtonItem = refreshButton
+                let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: strongSelf, action: #selector(strongSelf.refreshDataButton(_:)))
+                strongSelf.navigationItem.rightBarButtonItem = refreshButton
             }
+            
+//            DispatchQueue.main.async { [weak self] in
+//                guard let strongSelf = self else { return }
+//
+//                strongSelf.tableView.reloadData()
+//
+//                // Set text to title
+//                let titleTextOfCoursesScreen = "Курс на " + Model.shared.dateFromFile
+//                strongSelf.navigationItem.title = titleTextOfCoursesScreen
+//
+//                // Stop loader after updating data
+//                let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: strongSelf, action: #selector(strongSelf.refreshDataButton(_:)))
+//                strongSelf.navigationItem.rightBarButtonItem = refreshButton
+//            }
         }
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("SomeExternalError"), object: nil, queue: nil) { (Notification) in

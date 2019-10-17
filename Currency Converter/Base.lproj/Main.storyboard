@@ -148,17 +148,101 @@
             </objects>
             <point key="canvasLocation" x="1673.913043478261" y="-431.25"/>
         </scene>
-        <!--Конвертер-->
+        <!--Конвертер валют-->
         <scene sceneID="vAX-iT-Z7j">
             <objects>
                 <viewController id="mMB-T3-Mal" customClass="ConverterController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hW-Az-GIk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-bv-XT8">
+                                <rect key="frame" x="40" y="190" width="324" height="91"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="i89-lv-wXG">
+                                        <rect key="frame" x="35" y="0.0" width="254" height="41"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLX-dD-8ol">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="RUR">
+                                                    <color key="titleColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fromCurrencyButtonAction:" destination="mMB-T3-Mal" eventType="touchUpInside" id="fTk-VT-gWI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIF-Nu-GF3">
+                                                <rect key="frame" x="207" y="0.0" width="47" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="RUR">
+                                                    <color key="titleColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="toCurrencyButtonAction:" destination="mMB-T3-Mal" eventType="touchUpInside" id="Ukb-zT-ElG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="SwO-JE-lo5">
+                                        <rect key="frame" x="8.5" y="57" width="307" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJn-xd-IFG">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="263-aM-SHA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="fromCurrencyValueChange:" destination="mMB-T3-Mal" eventType="editingChanged" id="doS-8c-ZJX"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-fd-rgG">
+                                                <rect key="frame" x="148" y="0.0" width="11" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oj-OV-2cC">
+                                                <rect key="frame" x="207" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Sy7-uZ-JuJ"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="toCurrencyValueChange:" destination="mMB-T3-Mal" eventType="editingChanged" id="SNq-0K-Lg0"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ue-NZ-qoY">
+                                <rect key="frame" x="181" y="155" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e4i-bv-XT8" firstAttribute="leading" secondItem="H3l-J8-QSR" secondAttribute="leading" constant="40" id="BQX-l2-T4M"/>
+                            <constraint firstItem="H3l-J8-QSR" firstAttribute="trailing" secondItem="e4i-bv-XT8" secondAttribute="trailing" constant="50" id="XNk-90-g7e"/>
+                            <constraint firstItem="e4i-bv-XT8" firstAttribute="top" secondItem="H3l-J8-QSR" secondAttribute="top" constant="50" id="svd-to-pie"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H3l-J8-QSR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Конвертер" id="Pqr-gs-ohZ"/>
+                    <navigationItem key="navigationItem" title="Конвертер валют" id="Pqr-gs-ohZ"/>
+                    <connections>
+                        <outlet property="dateForConverter" destination="2ue-NZ-qoY" id="7n6-Vf-k15"/>
+                        <outlet property="fromCurrencyButtonName" destination="sLX-dD-8ol" id="LR3-nB-laG"/>
+                        <outlet property="fromCurrencyValue" destination="YJn-xd-IFG" id="jc0-qc-XuU"/>
+                        <outlet property="toCurrencyButtonName" destination="xIF-Nu-GF3" id="wSv-ut-47n"/>
+                        <outlet property="toCurrencyValue" destination="2oj-OV-2cC" id="K90-61-Ten"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYs-wa-hSD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -29,7 +29,7 @@ class Currency {
     // The value "Ruble" is missing in the file from cbr.ru, so we create it manually
     class func rouble() -> Currency {
         let r = Currency()
-        r.charCode = "RUB"
+        r.charCode = "RUR"
         r.name = "Российский рубль"
         r.nominal = "1"
         r.nominalDouble = 1
@@ -85,15 +85,16 @@ class Model: NSObject, XMLParserDelegate {
     func loadXMLFile (date: Date?) {
         
         // Create a URL depending on the week day
-        var strUrl = "http://www.cbr.ru/scripts/XML_daily.asp?date_req="
+        var strUrl = "http://cbr.ru/scripts/XML_daily.asp?date_req="
         
-        if date != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy "
-            strUrl = strUrl + dateFormatter.string(from: date!)
-        }
+        let dateToShow = date ?? Date()
         
-        let url = URL(string: strUrl)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        strUrl = strUrl + dateFormatter.string(from: dateToShow)
+        
+        let escapedStrUrl = strUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = URL(string: escapedStrUrl!)
         
         // Generate URL request
         let task = URLSession.shared.dataTask(with: url!) { (data, responce, error) in
