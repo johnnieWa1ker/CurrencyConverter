@@ -26,6 +26,14 @@ class Currency {
     var value: String?
     var valueDouble: Double?
     
+    var imageFlag: UIImage? {
+        if let CharCode = charCode {
+            return UIImage(named: CharCode)
+        } else {
+            return nil
+        }
+    }
+    
     // The value "Ruble" is missing in the file from cbr.ru, so we create it manually
     class func rouble() -> Currency {
         let r = Currency()
