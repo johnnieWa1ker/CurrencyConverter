@@ -42,7 +42,7 @@ class Currency {
 
 class Model: NSObject, XMLParserDelegate {
     
-    // What does this mean? For what?
+    // Singleton
     static let shared = Model()
     
     // A variable that stores an array of data with currencies and values
@@ -55,14 +55,14 @@ class Model: NSObject, XMLParserDelegate {
     var fromCurrency: Currency = Currency.rouble()
     var toCurrency: Currency = Currency.rouble()
     
-    func  convert (amount: Double?) -> String {
+    func  convert (amount: Double?) -> Double {
         if amount == nil {
-            return ""
+            return 0.0
         }
         
         let d = ((fromCurrency.nominalDouble! * fromCurrency.valueDouble!) / (toCurrency.nominalDouble! * toCurrency.valueDouble!)) * amount!
         
-        return String(d)
+        return Double(d)
     }
     
     // Path to the data file if can't load file from cbr.ru

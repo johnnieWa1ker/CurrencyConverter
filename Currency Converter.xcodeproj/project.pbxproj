@@ -16,6 +16,7 @@
 		79158F3223508808009C133B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79158F3123508808009C133B /* Model.swift */; };
 		796635C02351C28100AF8688 /* ConverterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796635BF2351C28100AF8688 /* ConverterController.swift */; };
 		796635C22351C40500AF8688 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796635C12351C40500AF8688 /* CoursesController.swift */; };
+		798B53CA2359C63400C648DD /* СhangeCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B53C92359C63400C648DD /* СhangeCurrencyController.swift */; };
 		79A4D1E62355B50C00D2DD79 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4D1E52355B50C00D2DD79 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		79158F3123508808009C133B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		796635BF2351C28100AF8688 /* ConverterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterController.swift; sourceTree = "<group>"; };
 		796635C12351C40500AF8688 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
+		798B53C92359C63400C648DD /* СhangeCurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СhangeCurrencyController.swift"; sourceTree = "<group>"; };
 		79A4D1E52355B50C00D2DD79 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				796635C12351C40500AF8688 /* CoursesController.swift */,
 				79A4D1E52355B50C00D2DD79 /* SettingsController.swift */,
 				796635BF2351C28100AF8688 /* ConverterController.swift */,
+				798B53C92359C63400C648DD /* СhangeCurrencyController.swift */,
 				79158F1B2350876E009C133B /* AppDelegate.swift */,
 				79158F1D2350876E009C133B /* SceneDelegate.swift */,
 				79158F242350876F009C133B /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A4D1E62355B50C00D2DD79 /* SettingsController.swift in Sources */,
+				798B53CA2359C63400C648DD /* СhangeCurrencyController.swift in Sources */,
 				79158F1C2350876E009C133B /* AppDelegate.swift in Sources */,
 				79158F1E2350876E009C133B /* SceneDelegate.swift in Sources */,
 				79158F3223508808009C133B /* Model.swift in Sources */,

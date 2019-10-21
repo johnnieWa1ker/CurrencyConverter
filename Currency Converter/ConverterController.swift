@@ -9,62 +9,64 @@
 import UIKit
 
 class ConverterController: UIViewController {
-
-    @IBOutlet weak var dateForConverter: UILabel!
     
-    // Buttons
-    // View info
-    @IBOutlet weak var fromCurrencyButtonName: UIButton!
-    @IBOutlet weak var toCurrencyButtonName: UIButton!
-    
-    // Actions
+    // Buttons that change currency
+    @IBOutlet weak var fromCurrencyButtonOutlet: UIButton!
+    @IBOutlet weak var toCurrencyButtonOutlet: UIButton!
     @IBAction func fromCurrencyButtonAction(_ sender: Any) {
+        let ns = storyboard?.instantiateViewController(identifier: "selectedCurrencyNSID") as! UINavigationController
+        (ns.viewControllers[0] as! СhangeCurrencyController).flagCurrency = .from
+        ns.modalPresentationStyle = .fullScreen
     }
     @IBAction func toCurrencyButtonAction(_ sender: Any) {
+        let ns = storyboard?.instantiateViewController(identifier: "selectedCurrencyNSID") as! UINavigationController
+        (ns.viewControllers[0] as! СhangeCurrencyController).flagCurrency = .to
+        ns.modalPresentationStyle = .fullScreen
     }
     
-    // Textfields
-    // View info
-    @IBOutlet weak var fromCurrencyValue: UITextField!
-    @IBOutlet weak var toCurrencyValue: UITextField!
-    
-    // Actions
+    // Textfields with currency value
+    @IBOutlet weak var fromCurrencyValueOutlet: UITextField!
+    @IBOutlet weak var toCurrencyValueOutlet: UITextField!
     @IBAction func fromCurrencyValueChange(_ sender: Any) {
-        let amount = Double(fromCurrencyValue.text!)
-        toCurrencyValue.text = Model.shared.convert(amount: amount!)
+        let amount = Double(fromCurrencyValueOutlet.text!)
+        if amount != nil {
+            toCurrencyValueOutlet.text = String(Model.shared.convert(amount: amount))
+        } else {
+            toCurrencyValueOutlet.text = ""
+        }
+        
     }
     @IBAction func toCurrencyValueChange(_ sender: Any) {
     }
     
+    // Button that hides the keyboard
+    @IBOutlet weak var buttonDoneOutlet: UIBarButtonItem!
+    @IBAction func pushDoneAction(_ sender: Any) {
+        fromCurrencyValueOutlet.resignFirstResponder()
+        navigationItem.rightBarButtonItem = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fromCurrencyValueOutlet.delegate = self
         // Do any additional setup after loading the view.
     }
     
     func refreshButtons () {
-        fromCurrencyButtonName.setTitle(Model.shared.fromCurrency.charCode, for: UIControl.State.normal)
-        
-        toCurrencyButtonName.setTitle(Model.shared.toCurrency.charCode, for: UIControl.State.normal)
+        fromCurrencyButtonOutlet.setTitle(Model.shared.fromCurrency.charCode, for: UIControl.State.normal)
+        toCurrencyButtonOutlet.setTitle(Model.shared.toCurrency.charCode, for: UIControl.State.normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         refreshButtons()
-        
-        toCurrencyValue.isUserInteractionEnabled = false
-        
+        refreshButtons()
+        toCurrencyValueOutlet.isUserInteractionEnabled = false
+        fromCurrencyValueChange(self)
     }
-    
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ConverterController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        navigationItem.rightBarButtonItem = buttonDoneOutlet
+        return true
     }
-    */
-
 }

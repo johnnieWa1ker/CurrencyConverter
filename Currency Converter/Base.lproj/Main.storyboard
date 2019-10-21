@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfl-jt-J5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673.913043478261" y="-1181.25"/>
+            <point key="canvasLocation" x="2667" y="-431"/>
         </scene>
         <!--Курсы-->
         <scene sceneID="teM-S8-JL1">
@@ -169,7 +169,7 @@
                                                     <color key="titleColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="fromCurrencyButtonAction:" destination="mMB-T3-Mal" eventType="touchUpInside" id="fTk-VT-gWI"/>
+                                                    <action selector="fromCurrencyButtonAction:" destination="mMB-T3-Mal" eventType="touchUpInside" id="2Rb-Us-7pz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIF-Nu-GF3">
@@ -179,16 +179,17 @@
                                                     <color key="titleColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="toCurrencyButtonAction:" destination="mMB-T3-Mal" eventType="touchUpInside" id="Ukb-zT-ElG"/>
+                                                    <action selector="toCurrencyButtonAction:" destination="mMB-T3-Mal" eventType="touchUpInside" id="gpn-fy-0YZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="SwO-JE-lo5">
-                                        <rect key="frame" x="8.5" y="57" width="307" height="34"/>
+                                        <rect key="frame" x="2.5" y="57" width="319" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJn-xd-IFG">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="263-aM-SHA"/>
                                                 </constraints>
@@ -198,18 +199,19 @@
                                                     <action selector="fromCurrencyValueChange:" destination="mMB-T3-Mal" eventType="editingChanged" id="doS-8c-ZJX"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-fd-rgG">
-                                                <rect key="frame" x="148" y="0.0" width="11" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="➡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaN-fd-rgG">
+                                                <rect key="frame" x="148" y="0.0" width="23" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oj-OV-2cC">
-                                                <rect key="frame" x="207" y="0.0" width="100" height="34"/>
+                                                <rect key="frame" x="219" y="0.0" width="100" height="34"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="Sy7-uZ-JuJ"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="toCurrencyValueChange:" destination="mMB-T3-Mal" eventType="editingChanged" id="SNq-0K-Lg0"/>
@@ -219,13 +221,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ue-NZ-qoY">
-                                <rect key="frame" x="181" y="155" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -235,18 +230,60 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H3l-J8-QSR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Конвертер валют" id="Pqr-gs-ohZ"/>
+                    <navigationItem key="navigationItem" title="Конвертер валют" id="Pqr-gs-ohZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gO6-qT-9pr">
+                            <connections>
+                                <action selector="pushDoneAction:" destination="mMB-T3-Mal" id="AGg-TV-3Yj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="dateForConverter" destination="2ue-NZ-qoY" id="7n6-Vf-k15"/>
-                        <outlet property="fromCurrencyButtonName" destination="sLX-dD-8ol" id="LR3-nB-laG"/>
-                        <outlet property="fromCurrencyValue" destination="YJn-xd-IFG" id="jc0-qc-XuU"/>
-                        <outlet property="toCurrencyButtonName" destination="xIF-Nu-GF3" id="wSv-ut-47n"/>
-                        <outlet property="toCurrencyValue" destination="2oj-OV-2cC" id="K90-61-Ten"/>
+                        <outlet property="buttonDoneOutlet" destination="gO6-qT-9pr" id="CH7-rG-Yl3"/>
+                        <outlet property="directionLaber" destination="FaN-fd-rgG" id="nBX-Z0-gbV"/>
+                        <outlet property="fromCurrencyButtonOutlet" destination="sLX-dD-8ol" id="O5i-Ao-DUi"/>
+                        <outlet property="fromCurrencyValueOutlet" destination="YJn-xd-IFG" id="jc0-qc-XuU"/>
+                        <outlet property="toCurrencyButtonOutlet" destination="xIF-Nu-GF3" id="gYV-FO-arf"/>
+                        <outlet property="toCurrencyValueOutlet" destination="2oj-OV-2cC" id="K90-61-Ten"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYs-wa-hSD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1673.913043478261" y="372.99107142857139"/>
+        </scene>
+        <!--Выберите валюту-->
+        <scene sceneID="7nM-nh-zpb">
+            <objects>
+                <tableViewController id="rce-zb-oMc" customClass="СhangeCurrencyController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ic3-cl-VWj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="currencyCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y8e-wY-jWv">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y8e-wY-jWv" id="zxN-sB-JbJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rce-zb-oMc" id="FME-h0-CL5"/>
+                            <outlet property="delegate" destination="rce-zb-oMc" id="NrD-Mz-8gK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Выберите валюту" id="v7S-I2-vbR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mAS-Y9-Rru">
+                            <connections>
+                                <action selector="pushCancelButton:" destination="rce-zb-oMc" id="Oez-ok-bU3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DO9-Je-DoY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3609" y="373"/>
         </scene>
         <!--Конвертер-->
         <scene sceneID="AvZ-P4-o7b">
@@ -296,6 +333,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzX-pA-SE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="763.768115942029" y="-431.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b1L-3k-oof">
+            <objects>
+                <navigationController storyboardIdentifier="selectedCurrencyNSID" automaticallyAdjustsScrollViewInsets="NO" id="fXw-Kp-OjH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="SFj-TO-AD3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rce-zb-oMc" kind="relationship" relationship="rootViewController" id="Ydr-7n-CuL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LGz-Gq-wGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2667" y="373"/>
         </scene>
     </scenes>
     <resources>
