@@ -18,7 +18,7 @@
 		796635C22351C40500AF8688 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796635C12351C40500AF8688 /* CoursesController.swift */; };
 		798B53CA2359C63400C648DD /* СhangeCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B53C92359C63400C648DD /* СhangeCurrencyController.swift */; };
 		79A4D1E62355B50C00D2DD79 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A4D1E52355B50C00D2DD79 /* SettingsController.swift */; };
-		967D2AB6235DF2BD00A95DBF /* flagsImages in Resources */ = {isa = PBXBuildFile; fileRef = 967D2AB5235DF2BD00A95DBF /* flagsImages */; };
+		9658A8192361A35F00235442 /* flagsImages in Resources */ = {isa = PBXBuildFile; fileRef = 9658A8182361A35F00235442 /* flagsImages */; };
 		967D2AB8235DF57900A95DBF /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D2AB7235DF57900A95DBF /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		796635C12351C40500AF8688 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		798B53C92359C63400C648DD /* СhangeCurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СhangeCurrencyController.swift"; sourceTree = "<group>"; };
 		79A4D1E52355B50C00D2DD79 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		967D2AB5235DF2BD00A95DBF /* flagsImages */ = {isa = PBXFileReference; lastKnownFileType = folder; name = flagsImages; path = ../../../../../../Downloads/flagsImages; sourceTree = "<group>"; };
+		9658A8182361A35F00235442 /* flagsImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = flagsImages; sourceTree = "<group>"; };
 		967D2AB7235DF57900A95DBF /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +82,7 @@
 				79158F242350876F009C133B /* Assets.xcassets */,
 				79158F262350876F009C133B /* LaunchScreen.storyboard */,
 				79158F2F235087EB009C133B /* data.xml */,
-				967D2AB5235DF2BD00A95DBF /* flagsImages */,
+				9658A8182361A35F00235442 /* flagsImages */,
 				79158F292350876F009C133B /* Info.plist */,
 			);
 			path = "Currency Converter";
@@ -146,7 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967D2AB6235DF2BD00A95DBF /* flagsImages in Resources */,
+				9658A8192361A35F00235442 /* flagsImages in Resources */,
 				79158F282350876F009C133B /* LaunchScreen.storyboard in Resources */,
 				79158F30235087EB009C133B /* data.xml in Resources */,
 				79158F252350876F009C133B /* Assets.xcassets in Resources */,

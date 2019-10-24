@@ -27,6 +27,7 @@ class CoursesController: UITableViewController {
                 // MARK: Not work (((
                 // Run loader when updating data
                 let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+                activityIndicator.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
                 activityIndicator.color = UIColor.red
                 activityIndicator.startAnimating()
                 strongSelf.navigationItem.rightBarButtonItem?.customView = activityIndicator
@@ -98,7 +99,7 @@ class CoursesController: UITableViewController {
 
         let courseForCell = Model.shared.currencies[indexPath.row]
         cell.initCell(currency: courseForCell)
-
+        
         return cell
     }
     

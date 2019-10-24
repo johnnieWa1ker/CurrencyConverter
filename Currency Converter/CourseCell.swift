@@ -10,6 +10,7 @@ import UIKit
 
 class CourseCell: UITableViewCell {
 
+    
     @IBOutlet weak var imageFlag: UIImageView!
     @IBOutlet weak var labelCurrencyName: UILabel!
     @IBOutlet weak var labelCourse: UILabel!

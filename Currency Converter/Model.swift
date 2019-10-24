@@ -28,7 +28,7 @@ class Currency {
     
     var imageFlag: UIImage? {
         if let CharCode = charCode {
-            return UIImage(named: CharCode)
+            return UIImage(named: CharCode+".png")
         } else {
             return nil
         }

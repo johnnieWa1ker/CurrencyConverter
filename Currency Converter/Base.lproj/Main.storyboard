@@ -157,7 +157,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageFlag" destination="Cia-rm-O1s" id="e9Z-ja-HNi"/>
+                                    <outlet property="imageFlag" destination="Cia-rm-O1s" id="Bwv-2R-MZo"/>
                                     <outlet property="labelCharCode" destination="5NV-aC-3vd" id="SRI-3S-UiR"/>
                                     <outlet property="labelCourse" destination="FoH-VE-LcO" id="bvQ-Hc-G7Q"/>
                                     <outlet property="labelCurrencyName" destination="wwy-Q6-GV6" id="PB2-kd-mvL"/>
@@ -299,7 +299,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buttonDoneOutlet" destination="gO6-qT-9pr" id="CH7-rG-Yl3"/>
-                        <outlet property="directionLaber" destination="FaN-fd-rgG" id="nBX-Z0-gbV"/>
                         <outlet property="fromCurrencyButtonOutlet" destination="sLX-dD-8ol" id="O5i-Ao-DUi"/>
                         <outlet property="fromCurrencyValueOutlet" destination="YJn-xd-IFG" id="jc0-qc-XuU"/>
                         <outlet property="toCurrencyButtonOutlet" destination="xIF-Nu-GF3" id="gYV-FO-arf"/>
