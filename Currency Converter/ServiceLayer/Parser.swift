@@ -58,12 +58,8 @@ class Parser: NSObject, XMLParserDelegate, CurrencyParser {
                 currencies.append(currentCurrency!)
             }
         }
-
+        
         completion(currencies)
-    }
-    
-    // Есть набор функций которые я взял из XMLParserDelegate, но как работать с результатами парсера в презенторе?
-    
-    
-    }
+    }    
+}
 
