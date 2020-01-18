@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/feliksbondarev/Library/Mobile Documents/com~apple~CloudDocs/XCode/Currency Converter/Currency Converter/flagsImages">
-   </FileRef>
-   <FileRef
       location = "self:Currency Converter.xcodeproj">
    </FileRef>
 </Workspace>
