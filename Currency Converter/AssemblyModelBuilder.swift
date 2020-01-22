@@ -18,7 +18,7 @@ protocol AssemblyBuilderProtocol {
 class AssemblyModelBuilder: AssemblyBuilderProtocol {
     
     func createCoursesModule(router: RouterProtocol) -> UIViewController {
-        let view = CoursesViewController()
+        let view = CoursesViewController(nibName: "CoursesViewController", bundle: nil)
         let networkService = NetworkService()
         let presenter = CoursesPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
@@ -26,7 +26,7 @@ class AssemblyModelBuilder: AssemblyBuilderProtocol {
     }
     
     func createDateChangeModule(router: RouterProtocol) -> UIViewController {
-        let view = DateChangeViewController()
+        let view = DateChangeViewController(nibName: "DateChangeViewController", bundle: nil)
         let networkService = NetworkService()
         let presenter = DateChangePresenter()
         view.presenter = presenter

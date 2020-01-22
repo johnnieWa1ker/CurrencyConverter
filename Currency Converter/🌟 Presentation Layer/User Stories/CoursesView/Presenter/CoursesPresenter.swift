@@ -19,7 +19,7 @@ protocol CoursesViewPresenterProtocol: class {
     
     init(view: CoursesViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     
-    func getCourses()
+    func getCurrency()
     func changeDate()
 }
 
@@ -37,7 +37,7 @@ class CoursesPresenter: CoursesViewPresenterProtocol {
         self.router = router
     }
     
-    func getCourses() {
+    func getCurrency() {
         networkService.getData(date: date) { [weak self] result in
             guard let self = self else { return }
             

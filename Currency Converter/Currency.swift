@@ -20,7 +20,9 @@ import Foundation
 struct Currency {
     var numCode: Int?
     var charCode: String?
-    var nominal: Int?
+    var nominal: String?
+    var nominalDouble: Double?
     var name: String?
-    var value: Double?
+    var value: String?
+    var valueDouble: Double?
 }

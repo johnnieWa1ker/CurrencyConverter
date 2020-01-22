@@ -9,11 +9,11 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getData(date: Date?, completion: @escaping (Result<[Currency]?, Error>) -> Void)
+    func getData(date: Date?, completion: @escaping (Result<[Currency], Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
-    func getData(date: Date?, completion: @escaping (Result<[Currency]?, Error>) -> Void) {
+    func getData(date: Date?, completion: @escaping (Result<[Currency], Error>) -> Void) {
         
         
         // Подготавливаем дату для запроса. Если параметр даты будет отсутствовать, то вернется информация за текущий день
@@ -47,15 +47,10 @@ class NetworkService: NetworkServiceProtocol {
                 return
             }
             
-            do {
-                // Когда получаем данные, применяем к ним парсер и возвращаем массив объектов Currency
-                let parser = Parser()
-                let obj = parser.parseData(data: data!) { (currencies) in
-                    return currencies
-                }
-                completion(.success(obj))
-            } catch {
-                completion(.failure(error))
+            // Когда получаем данные, применяем к ним парсер и возвращаем массив объектов Currency
+            let parser = Parser()
+            parser.parseData(data: data!) { currencies in
+                completion(.success(currencies))
             }
             
         } .resume()
