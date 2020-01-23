@@ -29,7 +29,7 @@
 		79F2E3ED23CE1F0E005D06BB /* AssemblyModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3EC23CE1F0E005D06BB /* AssemblyModelBuilder.swift */; };
 		79F2E3F023CE1FE9005D06BB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3EF23CE1FE9005D06BB /* NetworkService.swift */; };
 		79FF85B523D5E66500D3B337 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF85B323D5E66500D3B337 /* CurrencyCell.swift */; };
-		79FF85B623D5E66500D3B337 /* CoursesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FF85B423D5E66500D3B337 /* CoursesTableViewCell.xib */; };
+		79FF85B623D5E66500D3B337 /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FF85B423D5E66500D3B337 /* CurrencyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,7 @@
 		79F2E3EC23CE1F0E005D06BB /* AssemblyModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModelBuilder.swift; sourceTree = "<group>"; };
 		79F2E3EF23CE1FE9005D06BB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		79FF85B323D5E66500D3B337 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
-		79FF85B423D5E66500D3B337 /* CoursesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesTableViewCell.xib; sourceTree = "<group>"; };
+		79FF85B423D5E66500D3B337 /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		790B362423D9C7ED00EE3338 /* 🧠 Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				79C18FE823CF6F89000B06BE /* Currency.swift */,
+			);
+			path = "🧠 Data Layer";
+			sourceTree = "<group>";
+		};
 		79158F0F2350876E009C133B = {
 			isa = PBXGroup;
 			children = (
@@ -90,10 +98,9 @@
 		79158F1A2350876E009C133B /* Currency Converter */ = {
 			isa = PBXGroup;
 			children = (
+				790B362423D9C7ED00EE3338 /* 🧠 Data Layer */,
 				79158F1B2350876E009C133B /* AppDelegate.swift */,
 				79F2E3EC23CE1F0E005D06BB /* AssemblyModelBuilder.swift */,
-				79F2E3EA23CE1EFF005D06BB /* Router.swift */,
-				79C18FE823CF6F89000B06BE /* Currency.swift */,
 				79F2E3EE23CE1FDD005D06BB /* 🤖 Service Layer */,
 				79FF85B023D5E5E700D3B337 /* 🌟 Presentation Layer */,
 				7933B97D23D22F9500C98ECE /* data.xml */,
@@ -213,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				79F2E3EF23CE1FE9005D06BB /* NetworkService.swift */,
+				79F2E3EA23CE1EFF005D06BB /* Router.swift */,
 				7933B97B23D22E6800C98ECE /* Parser.swift */,
 			);
 			path = "🤖 Service Layer";
@@ -250,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				79FF85B323D5E66500D3B337 /* CurrencyCell.swift */,
-				79FF85B423D5E66500D3B337 /* CoursesTableViewCell.xib */,
+				79FF85B423D5E66500D3B337 /* CurrencyCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -314,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79F2E3DC23CE1DE8005D06BB /* ConverterViewController.xib in Resources */,
-				79FF85B623D5E66500D3B337 /* CoursesTableViewCell.xib in Resources */,
+				79FF85B623D5E66500D3B337 /* CurrencyCell.xib in Resources */,
 				7933B97E23D22F9500C98ECE /* data.xml in Resources */,
 				79158F282350876F009C133B /* LaunchScreen.storyboard in Resources */,
 				79F2E3D423CE1DC8005D06BB /* DateChangeViewController.xib in Resources */,

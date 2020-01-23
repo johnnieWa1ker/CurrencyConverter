@@ -27,7 +27,9 @@ class CoursesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        coursesTable.register(CurrencyCell.self, forCellReuseIdentifier: "currencyCell")
+        let nib = UINib(nibName: "CurrencyCell", bundle: nil)
+        coursesTable.register(nib, forCellReuseIdentifier: "CurrencyCell")
+        
         self.presenter?.getCurrency()
     }
 }
@@ -40,7 +42,8 @@ extension CoursesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
+        cell.setupView()
         let currency = presenter?.currency?[indexPath.row]
         
         cell.configureCell(currency: currency)
