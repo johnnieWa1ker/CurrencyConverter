@@ -11,8 +11,6 @@ import UIKit
 protocol AssemblyBuilderProtocol {
     func createCoursesModule (router: RouterProtocol) -> UIViewController
     func createDateChangeModule (router: RouterProtocol) -> UIViewController
-//    func createCurrencySelectionModule (router: RouterProtocol) -> UIViewController
-//    func createConverterModule (router: RouterProtocol) -> UIViewController
 }
 
 class AssemblyModelBuilder: AssemblyBuilderProtocol {
@@ -26,28 +24,11 @@ class AssemblyModelBuilder: AssemblyBuilderProtocol {
     }
     
     func createDateChangeModule(router: RouterProtocol) -> UIViewController {
-        let view = DateChangeViewController(nibName: "DateChangeViewController", bundle: nil)
+        let view = SettingsViewViewController(nibName: "SettingsViewController", bundle: nil)
         let networkService = NetworkService()
-        let presenter = DateChangePresenter()
+        let presenter = SettingsPresenter()
         view.presenter = presenter
         return view
     }
-    
-//    func createConverterModule(router: RouterProtocol) -> UIViewController {
-//        let view = ConverterViewController()
-//        let networkService = NetworkService()
-//        let presenter =
-//        view.presenter = presenter
-//        return view
-//    }
-    
-//    func createCurrencySelectionModule(router: RouterProtocol) -> UIViewController {
-//        let view = CurrencySelectionViewController()
-//        let networkService = NetworkService()
-//        let presenter =
-//        view.presenter = presenter
-//        return view
-//    }
-    
 }
 

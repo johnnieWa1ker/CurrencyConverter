@@ -15,7 +15,7 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func initialViewController()
-    func changeDate(date: Date?)
+    func goToSettingsView(date: Date?)
 }
 
 class Router: RouterProtocol {
@@ -27,7 +27,7 @@ class Router: RouterProtocol {
         self.assemblyModelBuilder = assemblyModelBuilder
     }
     
-    // По умолчанию открывается экран со списком валют
+    // Стартовый экран - CoursesView
     func initialViewController() {
         if let navigationController = navigationController {
             guard let CoursesViewController = assemblyModelBuilder?.createCoursesModule(router: self) else { return }
@@ -35,8 +35,8 @@ class Router: RouterProtocol {
         }
     }
     
-    // Переход на экран выбора даты
-    func changeDate(date: Date?) {
+    // Переход к выбору даты
+    func goToSettingsView(date: Date?) {
         if let navigationController = navigationController {
             guard let DateChangeViewController = assemblyModelBuilder?.createDateChangeModule(router: self) else { return }
             navigationController.pushViewController(DateChangeViewController, animated: true)

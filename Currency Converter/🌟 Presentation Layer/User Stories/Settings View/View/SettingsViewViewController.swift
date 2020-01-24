@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DateChangeViewController: UIViewController {
+class SettingsViewViewController: UIViewController {
 
-    var presenter: DateChangeViewPresenterProtocol!
+    var presenter: SettingsViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,6 @@ class DateChangeViewController: UIViewController {
     }
 }
 
-extension DateChangeViewController: DateChangeViewProtocol {
+extension SettingsViewViewController: SettingsViewProtocol {
     
 }

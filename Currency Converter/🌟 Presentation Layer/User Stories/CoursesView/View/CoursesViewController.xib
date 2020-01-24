@@ -9,9 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoursesViewController" customModule="Currency_Converter" customModuleProvider="target">
             <connections>
-                <outlet property="baseCurrency" destination="ebS-pO-Zua" id="f1K-Gz-gpJ"/>
-                <outlet property="coursesTable" destination="Z0z-7T-cKN" id="0E1-qx-yLf"/>
-                <outlet property="currencyConversion" destination="Sku-0K-3ru" id="Nmy-Th-DaV"/>
+                <outlet property="baseCurrencyCharLabel" destination="ebS-pO-Zua" id="Rjk-oC-8Jg"/>
+                <outlet property="conversionCurrencyCharLabel" destination="Sku-0K-3ru" id="yBK-bE-cm8"/>
+                <outlet property="coursesTable" destination="Z0z-7T-cKN" id="dkC-3a-TAG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="xVf-YE-S7P"/>
             </connections>
         </placeholder>
@@ -20,63 +20,81 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-7T-cKN">
-                    <rect key="frame" x="0.0" y="166" width="414" height="508"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="508" id="xJT-uK-Gfl"/>
-                    </constraints>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="Zm6-ue-RLO"/>
-                        <outlet property="delegate" destination="-1" id="Jf3-aB-P1b"/>
-                    </connections>
-                </tableView>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="231" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-wb-hO4">
-                    <rect key="frame" x="56.5" y="104" width="301" height="20.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-RM-P6d">
+                    <rect key="frame" x="0.0" y="74" width="414" height="711.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebS-pO-Zua">
-                            <rect key="frame" x="0.0" y="0.0" width="28" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sku-0K-3ru">
-                            <rect key="frame" x="259" y="0.0" width="42" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="gLM-MP-X4z">
+                            <rect key="frame" x="40" y="0.0" width="334" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGa-0L-O7m">
+                                    <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                                    <state key="normal" title="Изменить дату"/>
+                                    <connections>
+                                        <action selector="changeDateAction:" destination="-1" eventType="touchUpInside" id="v4e-dW-gIU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efV-n1-tO4">
+                                    <rect key="frame" x="206" y="0.0" width="128" height="30"/>
+                                    <state key="normal" title="Обновить данные"/>
+                                    <connections>
+                                        <action selector="reloadDataAction:" destination="-1" eventType="touchUpInside" id="Hdx-mo-qtE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-wb-hO4">
+                            <rect key="frame" x="16" y="60" width="382" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="baseCurrency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebS-pO-Zua">
+                                    <rect key="frame" x="0.0" y="0.0" width="107.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02P-vq-0fJ">
+                                    <rect key="frame" x="137.5" y="0.0" width="78" height="20.5"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                    <state key="normal" title="Button" image="arrow.2.circlepath" catalog="system"/>
+                                    <connections>
+                                        <action selector="replaceCurrencyAction:" destination="-1" eventType="touchUpInside" id="f1h-Bz-aJO"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="conversionCurrency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sku-0K-3ru">
+                                    <rect key="frame" x="245.5" y="0.0" width="136.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-7T-cKN">
+                            <rect key="frame" x="0.0" y="110.5" width="414" height="601"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Zm6-ue-RLO"/>
+                                <outlet property="delegate" destination="-1" id="Jf3-aB-P1b"/>
+                            </connections>
+                        </tableView>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="k6O-wb-hO4" secondAttribute="trailing" constant="16" id="1Lk-RO-j9h"/>
+                        <constraint firstItem="Z0z-7T-cKN" firstAttribute="leading" secondItem="zt4-RM-P6d" secondAttribute="leading" id="jNy-G9-4wr"/>
+                        <constraint firstItem="k6O-wb-hO4" firstAttribute="leading" secondItem="zt4-RM-P6d" secondAttribute="leading" constant="16" id="zXZ-xb-MHg"/>
+                    </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efV-n1-tO4">
-                    <rect key="frame" x="254" y="754" width="128" height="30"/>
-                    <state key="normal" title="Обновить данные"/>
-                    <connections>
-                        <action selector="reloadDataAction:" destination="-1" eventType="touchUpInside" id="Hdx-mo-qtE"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGa-0L-O7m">
-                    <rect key="frame" x="48" y="754" width="108" height="30"/>
-                    <state key="normal" title="Изменить дату"/>
-                    <connections>
-                        <action selector="changeDateAction:" destination="-1" eventType="touchUpInside" id="v4e-dW-gIU"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="k6O-wb-hO4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="3vL-9S-lye"/>
-                <constraint firstItem="efV-n1-tO4" firstAttribute="leading" secondItem="zGa-0L-O7m" secondAttribute="trailing" constant="98" id="7wY-Lx-WDs"/>
-                <constraint firstItem="k6O-wb-hO4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MRH-ve-CZb"/>
-                <constraint firstItem="efV-n1-tO4" firstAttribute="top" secondItem="Z0z-7T-cKN" secondAttribute="bottom" constant="80" id="OkT-Q7-18R"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="efV-n1-tO4" secondAttribute="trailing" constant="32" id="Pzy-xB-UU6"/>
-                <constraint firstItem="Z0z-7T-cKN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Q3o-CK-fHd"/>
-                <constraint firstItem="Z0z-7T-cKN" firstAttribute="top" secondItem="k6O-wb-hO4" secondAttribute="bottom" constant="41.5" id="RQk-tI-EGX"/>
-                <constraint firstItem="efV-n1-tO4" firstAttribute="baseline" secondItem="zGa-0L-O7m" secondAttribute="baseline" id="V6y-sQ-TTe"/>
-                <constraint firstItem="Z0z-7T-cKN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vVe-Wj-jLa"/>
+                <constraint firstItem="zt4-RM-P6d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="CMZ-b4-v78"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zt4-RM-P6d" secondAttribute="bottom" constant="76.5" id="STZ-oE-aBi"/>
+                <constraint firstItem="zt4-RM-P6d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l9G-Rv-cCx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zt4-RM-P6d" secondAttribute="trailing" id="u6C-UE-vW3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="155.07246376811597" y="141.96428571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
+    </resources>
 </document>

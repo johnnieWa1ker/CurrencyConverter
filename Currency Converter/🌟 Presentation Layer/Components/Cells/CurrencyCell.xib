@@ -63,8 +63,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="baseCurrencyValueLabel" destination="7YT-WY-Kf9" id="eep-Sg-fob"/>
-                <outlet property="currencyConversionValueLabel" destination="Fh1-1v-dFd" id="fWA-mT-K5Q"/>
+                <outlet property="baseCurrencyLabel" destination="7YT-WY-Kf9" id="FGb-Hi-ukt"/>
+                <outlet property="conversionCurrencyLabel" destination="Fh1-1v-dFd" id="b5U-GM-pL8"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="158.70535714285714"/>
         </tableViewCell>

@@ -16,15 +16,9 @@
 		79F2E3C623CE1C68005D06BB /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3C423CE1C68005D06BB /* CoursesViewController.swift */; };
 		79F2E3C723CE1C68005D06BB /* CoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F2E3C523CE1C68005D06BB /* CoursesViewController.xib */; };
 		79F2E3CC23CE1CBE005D06BB /* CoursesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3CB23CE1CBE005D06BB /* CoursesPresenter.swift */; };
-		79F2E3D323CE1DC8005D06BB /* DateChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3D123CE1DC8005D06BB /* DateChangeViewController.swift */; };
-		79F2E3D423CE1DC8005D06BB /* DateChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F2E3D223CE1DC8005D06BB /* DateChangeViewController.xib */; };
-		79F2E3D723CE1DD8005D06BB /* CurrencySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3D523CE1DD8005D06BB /* CurrencySelectionViewController.swift */; };
-		79F2E3D823CE1DD8005D06BB /* CurrencySelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F2E3D623CE1DD8005D06BB /* CurrencySelectionViewController.xib */; };
-		79F2E3DB23CE1DE8005D06BB /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3D923CE1DE8005D06BB /* ConverterViewController.swift */; };
-		79F2E3DC23CE1DE8005D06BB /* ConverterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F2E3DA23CE1DE8005D06BB /* ConverterViewController.xib */; };
-		79F2E3E523CE1E53005D06BB /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3E423CE1E53005D06BB /* ConverterPresenter.swift */; };
-		79F2E3E723CE1E70005D06BB /* CurrencySelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3E623CE1E70005D06BB /* CurrencySelectionPresenter.swift */; };
-		79F2E3E923CE1E87005D06BB /* DateChangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3E823CE1E87005D06BB /* DateChangePresenter.swift */; };
+		79F2E3D323CE1DC8005D06BB /* SettingsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3D123CE1DC8005D06BB /* SettingsViewViewController.swift */; };
+		79F2E3D423CE1DC8005D06BB /* SettingsViewViewController.swift.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F2E3D223CE1DC8005D06BB /* SettingsViewViewController.swift.xib */; };
+		79F2E3E923CE1E87005D06BB /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3E823CE1E87005D06BB /* SettingsPresenter.swift */; };
 		79F2E3EB23CE1EFF005D06BB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3EA23CE1EFF005D06BB /* Router.swift */; };
 		79F2E3ED23CE1F0E005D06BB /* AssemblyModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3EC23CE1F0E005D06BB /* AssemblyModelBuilder.swift */; };
 		79F2E3F023CE1FE9005D06BB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F2E3EF23CE1FE9005D06BB /* NetworkService.swift */; };
@@ -44,15 +38,9 @@
 		79F2E3C423CE1C68005D06BB /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		79F2E3C523CE1C68005D06BB /* CoursesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesViewController.xib; sourceTree = "<group>"; };
 		79F2E3CB23CE1CBE005D06BB /* CoursesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesPresenter.swift; sourceTree = "<group>"; };
-		79F2E3D123CE1DC8005D06BB /* DateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateChangeViewController.swift; sourceTree = "<group>"; };
-		79F2E3D223CE1DC8005D06BB /* DateChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateChangeViewController.xib; sourceTree = "<group>"; };
-		79F2E3D523CE1DD8005D06BB /* CurrencySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewController.swift; sourceTree = "<group>"; };
-		79F2E3D623CE1DD8005D06BB /* CurrencySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencySelectionViewController.xib; sourceTree = "<group>"; };
-		79F2E3D923CE1DE8005D06BB /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
-		79F2E3DA23CE1DE8005D06BB /* ConverterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterViewController.xib; sourceTree = "<group>"; };
-		79F2E3E423CE1E53005D06BB /* ConverterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
-		79F2E3E623CE1E70005D06BB /* CurrencySelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionPresenter.swift; sourceTree = "<group>"; };
-		79F2E3E823CE1E87005D06BB /* DateChangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateChangePresenter.swift; sourceTree = "<group>"; };
+		79F2E3D123CE1DC8005D06BB /* SettingsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewController.swift; sourceTree = "<group>"; };
+		79F2E3D223CE1DC8005D06BB /* SettingsViewViewController.swift.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewViewController.swift.xib; sourceTree = "<group>"; };
+		79F2E3E823CE1E87005D06BB /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		79F2E3EA23CE1EFF005D06BB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		79F2E3EC23CE1F0E005D06BB /* AssemblyModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModelBuilder.swift; sourceTree = "<group>"; };
 		79F2E3EF23CE1FE9005D06BB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -138,56 +126,20 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		79F2E3CE23CE1D59005D06BB /* ConverterView */ = {
-			isa = PBXGroup;
-			children = (
-				79F2E3DD23CE1DED005D06BB /* View */,
-				79F2E3E323CE1E32005D06BB /* Presenter */,
-			);
-			path = ConverterView;
-			sourceTree = "<group>";
-		};
-		79F2E3CF23CE1D89005D06BB /* CurrencySelectionView */ = {
-			isa = PBXGroup;
-			children = (
-				79F2E3DE23CE1DF6005D06BB /* View */,
-				79F2E3E223CE1E28005D06BB /* Presenter */,
-			);
-			path = CurrencySelectionView;
-			sourceTree = "<group>";
-		};
-		79F2E3D023CE1DA7005D06BB /* DateChangeView */ = {
+		79F2E3D023CE1DA7005D06BB /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
 				79F2E3DF23CE1DFD005D06BB /* View */,
 				79F2E3E123CE1E1D005D06BB /* Presenter */,
 			);
-			path = DateChangeView;
-			sourceTree = "<group>";
-		};
-		79F2E3DD23CE1DED005D06BB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				79F2E3D923CE1DE8005D06BB /* ConverterViewController.swift */,
-				79F2E3DA23CE1DE8005D06BB /* ConverterViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		79F2E3DE23CE1DF6005D06BB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				79F2E3D523CE1DD8005D06BB /* CurrencySelectionViewController.swift */,
-				79F2E3D623CE1DD8005D06BB /* CurrencySelectionViewController.xib */,
-			);
-			path = View;
+			path = "Settings View";
 			sourceTree = "<group>";
 		};
 		79F2E3DF23CE1DFD005D06BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				79F2E3D123CE1DC8005D06BB /* DateChangeViewController.swift */,
-				79F2E3D223CE1DC8005D06BB /* DateChangeViewController.xib */,
+				79F2E3D123CE1DC8005D06BB /* SettingsViewViewController.swift */,
+				79F2E3D223CE1DC8005D06BB /* SettingsViewViewController.swift.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,23 +147,7 @@
 		79F2E3E123CE1E1D005D06BB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				79F2E3E823CE1E87005D06BB /* DateChangePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		79F2E3E223CE1E28005D06BB /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				79F2E3E623CE1E70005D06BB /* CurrencySelectionPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		79F2E3E323CE1E32005D06BB /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				79F2E3E423CE1E53005D06BB /* ConverterPresenter.swift */,
+				79F2E3E823CE1E87005D06BB /* SettingsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -247,9 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				79F2E3C823CE1C6C005D06BB /* CoursesView */,
-				79F2E3D023CE1DA7005D06BB /* DateChangeView */,
-				79F2E3CE23CE1D59005D06BB /* ConverterView */,
-				79F2E3CF23CE1D89005D06BB /* CurrencySelectionView */,
+				79F2E3D023CE1DA7005D06BB /* Settings View */,
 			);
 			path = "User Stories";
 			sourceTree = "<group>";
@@ -321,12 +255,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F2E3DC23CE1DE8005D06BB /* ConverterViewController.xib in Resources */,
 				79FF85B623D5E66500D3B337 /* CurrencyCell.xib in Resources */,
 				7933B97E23D22F9500C98ECE /* data.xml in Resources */,
 				79158F282350876F009C133B /* LaunchScreen.storyboard in Resources */,
-				79F2E3D423CE1DC8005D06BB /* DateChangeViewController.xib in Resources */,
-				79F2E3D823CE1DD8005D06BB /* CurrencySelectionViewController.xib in Resources */,
+				79F2E3D423CE1DC8005D06BB /* SettingsViewViewController.swift.xib in Resources */,
 				79F2E3C723CE1C68005D06BB /* CoursesViewController.xib in Resources */,
 				79158F252350876F009C133B /* Assets.xcassets in Resources */,
 			);
@@ -339,21 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F2E3E923CE1E87005D06BB /* DateChangePresenter.swift in Sources */,
-				79F2E3D323CE1DC8005D06BB /* DateChangeViewController.swift in Sources */,
-				79F2E3DB23CE1DE8005D06BB /* ConverterViewController.swift in Sources */,
+				79F2E3E923CE1E87005D06BB /* SettingsPresenter.swift in Sources */,
+				79F2E3D323CE1DC8005D06BB /* SettingsViewViewController.swift in Sources */,
 				79C18FE923CF6F89000B06BE /* Currency.swift in Sources */,
 				79158F1C2350876E009C133B /* AppDelegate.swift in Sources */,
 				7933B97C23D22E6800C98ECE /* Parser.swift in Sources */,
 				79F2E3CC23CE1CBE005D06BB /* CoursesPresenter.swift in Sources */,
 				79F2E3EB23CE1EFF005D06BB /* Router.swift in Sources */,
-				79F2E3E523CE1E53005D06BB /* ConverterPresenter.swift in Sources */,
-				79F2E3D723CE1DD8005D06BB /* CurrencySelectionViewController.swift in Sources */,
 				79F2E3F023CE1FE9005D06BB /* NetworkService.swift in Sources */,
 				79FF85B523D5E66500D3B337 /* CurrencyCell.swift in Sources */,
 				79F2E3ED23CE1F0E005D06BB /* AssemblyModelBuilder.swift in Sources */,
 				79F2E3C623CE1C68005D06BB /* CoursesViewController.swift in Sources */,
-				79F2E3E723CE1E70005D06BB /* CurrencySelectionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

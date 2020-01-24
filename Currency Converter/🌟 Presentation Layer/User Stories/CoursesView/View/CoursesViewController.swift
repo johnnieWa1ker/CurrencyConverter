@@ -11,14 +11,16 @@ import UIKit
 class CoursesViewController: UIViewController {
 
     // MARK: IBOutlet
+    @IBOutlet weak var baseCurrencyCharLabel: UILabel!
+    @IBOutlet weak var conversionCurrencyCharLabel: UILabel!
     @IBOutlet weak var coursesTable: UITableView!
-    @IBOutlet weak var baseCurrency: UILabel!
-    @IBOutlet weak var currencyConversion: UILabel!
     
     // MARK: IBAction
     @IBAction func changeDateAction(_ sender: Any) {
     }
     @IBAction func reloadDataAction(_ sender: Any) {
+    }
+    @IBAction func replaceCurrencyAction(_ sender: Any) {
     }
     
     var presenter: CoursesViewPresenterProtocol?
@@ -28,7 +30,6 @@ class CoursesViewController: UIViewController {
 
         let nib = UINib(nibName: "CurrencyCell", bundle: nil)
         coursesTable.register(nib, forCellReuseIdentifier: "CurrencyCell")
-        
         
         self.presenter?.getCurrency()
     }
@@ -44,11 +45,9 @@ extension CoursesViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
         
-        cell.setupView()
+        guard presenter?.conversionCurrencyValue != nil else { return cell }
         
-        print(presenter?.currency?[11])
-        
-        cell.configureCell(baseCurrency: (presenter?.currency![11].valueDouble)!, currencyConversion: (presenter?.currency?[12].valueDouble)!)
+        cell.configureCell(baseCurrencyValue: presenter?.baseCurrencyValue[indexPath.row], conversionCurrencyValue: presenter?.conversionCurrencyValue![indexPath.row])
         
         return cell
     }
@@ -63,14 +62,13 @@ extension CoursesViewController: UITableViewDelegate {
 
 
 extension CoursesViewController: CoursesViewProtocol {
+    
     func success() {
+        
+        baseCurrencyCharLabel.text = presenter?.baseCurrency?.charCode
+        conversionCurrencyCharLabel.text = presenter?.conversionCurrency?.charCode
+        
         coursesTable.reloadData()
-        
-        // Поместить char коды в label
-//        baseCurrency.text = presenter?.currency?[11].valueDouble
-//        currencyConversion.text = presenter?.currency?[12].valueDouble
-        
-        presenter?.calculateCurrencyRatio(baseCurrency: (presenter?.currency?[11])!, currencyConversion: (presenter?.currency?[12])!)
     }
     
     func failure(error: Error) {

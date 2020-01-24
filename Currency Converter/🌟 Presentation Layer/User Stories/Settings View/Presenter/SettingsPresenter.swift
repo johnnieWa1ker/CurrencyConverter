@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol DateChangeViewProtocol: class {
+protocol SettingsViewProtocol: class {
     
 }
 
-protocol DateChangeViewPresenterProtocol: class {
+protocol SettingsViewPresenterProtocol: class {
     
 }
 
-class DateChangePresenter: DateChangeViewPresenterProtocol {
+class SettingsPresenter: SettingsViewPresenterProtocol {
     
 }

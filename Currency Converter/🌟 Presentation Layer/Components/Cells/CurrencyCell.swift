@@ -11,21 +11,22 @@ import UIKit
 class CurrencyCell: UITableViewCell {
     
     // MARK: IBOutlet
-    @IBOutlet weak var baseCurrencyValueLabel: UILabel!
-    @IBOutlet weak var currencyConversionValueLabel: UILabel!
+    @IBOutlet weak var baseCurrencyLabel: UILabel!
+    @IBOutlet weak var conversionCurrencyLabel: UILabel!
     
     
     // MARK: - Setup functions
-    func setupView() {
-        self.backgroundColor = .brown
-        self.contentView.backgroundColor = .cyan
-        
-    }
+//    func setupView() {
+//        self.backgroundColor = .brown
+//        self.contentView.backgroundColor = .cyan
+//
+//    }
     
     // MARK: - Module functions
-    func configureCell(baseCurrency: Double, currencyConversion: Double) {
+    func configureCell(baseCurrencyValue: Double?, conversionCurrencyValue: Double?) {
         
-        baseCurrencyValueLabel.text = String(baseCurrency)
-        currencyConversionValueLabel.text = String(currencyConversion)
+        guard (baseCurrencyValue != nil) && (conversionCurrencyValue != nil) else { print("Some currency is nil"); return }
+        baseCurrencyLabel.text = String(baseCurrencyValue!)
+        conversionCurrencyLabel.text = String(conversionCurrencyValue!)
     }
 }
