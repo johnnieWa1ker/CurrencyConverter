@@ -16,19 +16,27 @@ protocol CoursesViewProtocol: class {
 protocol CoursesViewPresenterProtocol: class {
     var currency: [Currency]? { get set }
     var date: Date? { get set }
-    
+    var baseCurrencyValue: Double? { get set }
+    var currencyConversionValue: Double? { get set }
+
     init(view: CoursesViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     
     func getCurrency()
+    func calculateCurrencyRatio(baseCurrency: Currency?, currencyConversion: Currency?)
     func changeDate()
 }
 
 class CoursesPresenter: CoursesViewPresenterProtocol {
     
+//    var baseValue: [Int] = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     weak var view: CoursesViewProtocol?
     let networkService: NetworkServiceProtocol!
     var router: RouterProtocol?
     var currency: [Currency]?
+    
+    var baseCurrencyValue: Double?
+    var currencyConversionValue: Double?
+    
     var date: Date?
     
     required init(view: CoursesViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
@@ -53,8 +61,19 @@ class CoursesPresenter: CoursesViewPresenterProtocol {
         }
     }
     
+    func calculateCurrencyRatio(baseCurrency: Currency?, currencyConversion: Currency?) {
+        
+        guard (baseCurrency != nil) && (currencyConversion != nil) else { return }
+        
+        let currencyRatio = currencyConversion!.valueDouble! / baseCurrency!.valueDouble!
+        
+        baseCurrencyValue = currencyConversion?.valueDouble!
+        currencyConversionValue = currencyRatio
+    }
+    
     func changeDate() {
         router?.changeDate(date: date)
+        
     }
     
     

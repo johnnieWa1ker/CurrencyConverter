@@ -12,6 +12,8 @@ class CoursesViewController: UIViewController {
 
     // MARK: IBOutlet
     @IBOutlet weak var coursesTable: UITableView!
+    @IBOutlet weak var baseCurrency: UILabel!
+    @IBOutlet weak var currencyConversion: UILabel!
     
     // MARK: IBAction
     @IBAction func changeDateAction(_ sender: Any) {
@@ -21,14 +23,12 @@ class CoursesViewController: UIViewController {
     
     var presenter: CoursesViewPresenterProtocol?
     
-//    Тестовый объект для проверки ошибки forceunwrap
-//    let testCurrency = Currency(numCode: 1, charCode: "TES", nominal: "1.0", nominalDouble: 1.0, name: "Test currency", value: "1.0", valueDouble: 1.0)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let nib = UINib(nibName: "CurrencyCell", bundle: nil)
         coursesTable.register(nib, forCellReuseIdentifier: "CurrencyCell")
+        
         
         self.presenter?.getCurrency()
     }
@@ -37,16 +37,18 @@ class CoursesViewController: UIViewController {
 extension CoursesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.currency?.count ?? 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
-        cell.setupView()
-        let currency = presenter?.currency?[indexPath.row]
         
-        cell.configureCell(currency: currency)
+        cell.setupView()
+        
+        print(presenter?.currency?[11])
+        
+        cell.configureCell(baseCurrency: (presenter?.currency![11].valueDouble)!, currencyConversion: (presenter?.currency?[12].valueDouble)!)
         
         return cell
     }
@@ -63,6 +65,12 @@ extension CoursesViewController: UITableViewDelegate {
 extension CoursesViewController: CoursesViewProtocol {
     func success() {
         coursesTable.reloadData()
+        
+        // Поместить char коды в label
+//        baseCurrency.text = presenter?.currency?[11].valueDouble
+//        currencyConversion.text = presenter?.currency?[12].valueDouble
+        
+        presenter?.calculateCurrencyRatio(baseCurrency: (presenter?.currency?[11])!, currencyConversion: (presenter?.currency?[12])!)
     }
     
     func failure(error: Error) {
